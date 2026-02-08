@@ -160,7 +160,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 		}
 		spacer := ""
 		if len(discountedRolls) > 0 {
-			spacer = " "
+			spacer = ", "
 		}
 		diceResultsString := fmt.Sprintf("%s - %s (%s%s%s)%s%s", matches[rollEntireIdx], strconv.Itoa(sum), strings.Join(diceRolls, ", "), spacer, strings.Join(discountedRolls, ", "), critSuccess, critFailure)
 		diceResultStrings = append(diceResultStrings, diceResultsString)
