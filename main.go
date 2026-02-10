@@ -66,7 +66,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 	re := regexp.MustCompile(`(?<RollEntire>(?P<NumberOfDice>\d*)d(?P<DiceFace>\d+)((?P<KeepValue>k|kh|kl)(?P<KeepCount>\d+))?)`)
 	rollString := m.Content
-	if rollString[0] != '!' || !re.Match([]byte(rollString)) {
+	if len(rollString) == 0 || rollString[0] != '!' || !re.Match([]byte(rollString)) {
 		return
 	}
 	var diceResultStrings []string
